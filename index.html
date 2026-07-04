@@ -16,7 +16,27 @@
 <meta name="twitter:title" content="Brandon Roos McClinton — Security Operations · Cloud Security · Detection & Automation">
 <meta name="twitter:description" content="Security practitioner with 7+ years across IT operations and security. Founder of Cyber Obsidian, a managed security and IT practice.">
 <meta name="twitter:image" content="https://brandonroos.github.io/og-image.png">
+<meta name="theme-color" content="#070b12">
+<link rel="canonical" href="https://brandonroos.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300c9b1' d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Brandon Roos McClinton",
+  "url": "https://brandonroos.github.io/",
+  "image": "https://brandonroos.github.io/headshot.jpg",
+  "jobTitle": "Founder, Cyber Obsidian",
+  "worksFor": { "@type": "Organization", "name": "Cyber Obsidian", "url": "https://cyberobsidian.com" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Liberty University" },
+  "sameAs": [
+    "https://www.linkedin.com/in/brandon-roos-mcclinton/",
+    "https://github.com/BrandonRoos",
+    "https://cyberobsidian.com"
+  ],
+  "knowsAbout": ["Security Operations", "SIEM", "Incident Response", "Cloud Security", "EDR", "Network Security", "Detection Engineering"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,6 +76,22 @@ outline-offset: 3px;
 border-radius: 2px;
 }
 .mono { font-family: 'DM Mono', monospace; }
+.skip-link {
+position: fixed;
+top: -100px; left: 0;
+z-index: 300;
+background: var(--teal);
+color: #04211d;
+padding: 0.7rem 1.3rem;
+border-radius: 0 0 8px 0;
+font-family: 'DM Mono', monospace;
+font-size: 0.75rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+text-decoration: none;
+transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
 /* BACKGROUND LAYERS */
 .grid-bg {
 position: fixed;
@@ -336,9 +372,34 @@ letter-spacing: 0.06em;
 padding: 1.3rem 1.4rem 1.5rem;
 line-height: 2;
 min-height: 300px;
+max-height: 380px;
+overflow-y: auto;
 transition: opacity 0.3s ease;
+cursor: text;
+scrollbar-width: thin;
+scrollbar-color: var(--border-hi) transparent;
 }
+.terminal-body::-webkit-scrollbar { width: 6px; }
+.terminal-body::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
 .t-line { white-space: pre-wrap; word-break: break-word; }
+.t-line.t-active { display: flex; align-items: baseline; }
+.t-input {
+flex: 1;
+min-width: 40px;
+background: transparent;
+border: none;
+outline: none;
+color: var(--text);
+font-family: 'DM Mono', monospace;
+font-size: inherit;
+line-height: inherit;
+caret-color: var(--teal);
+padding: 0;
+margin-left: 0.55ch;
+}
+.t-hint { color: var(--muted); font-size: 0.72rem; }
+.t-link { color: var(--teal); text-decoration: underline; text-decoration-color: rgba(0,201,177,0.4); text-underline-offset: 3px; }
+.t-link:hover { color: var(--teal-bright); }
 .t-prompt { color: var(--teal); }
 .t-cmd { color: var(--text); }
 .t-out { color: var(--body); }
@@ -393,6 +454,79 @@ font-size: 0.95rem;
 max-width: 560px;
 margin-bottom: 2.8rem;
 }
+/* EXPERIENCE TIMELINE */
+.timeline {
+position: relative;
+padding-left: 2rem;
+max-width: 760px;
+}
+.timeline::before {
+content: '';
+position: absolute;
+left: 6px;
+top: 8px;
+bottom: 8px;
+width: 1px;
+background: linear-gradient(180deg, var(--teal) 0%, var(--border-hi) 100%);
+opacity: 0.55;
+}
+.timeline-item {
+position: relative;
+padding-bottom: 2.4rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+content: '';
+position: absolute;
+left: -2rem;
+top: 8px;
+width: 13px; height: 13px;
+border-radius: 50%;
+background: var(--bg);
+border: 2px solid var(--teal);
+box-shadow: 0 0 10px var(--teal-glow);
+}
+.timeline-head {
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+gap: 1rem;
+flex-wrap: wrap;
+margin-bottom: 0.2rem;
+}
+.timeline-head h3 {
+font-family: 'Syne', sans-serif;
+font-size: 1.12rem;
+font-weight: 700;
+letter-spacing: -0.01em;
+}
+.timeline-date {
+font-family: 'DM Mono', monospace;
+font-size: 0.66rem;
+color: var(--teal-bright);
+letter-spacing: 0.1em;
+text-transform: uppercase;
+background: var(--teal-dim);
+border: 1px solid rgba(0,201,177,0.35);
+border-radius: 100px;
+padding: 0.25rem 0.75rem;
+white-space: nowrap;
+}
+.timeline-org {
+font-family: 'DM Mono', monospace;
+font-size: 0.76rem;
+color: var(--body);
+letter-spacing: 0.04em;
+margin-bottom: 0.7rem;
+}
+.timeline-org a { color: var(--teal); text-decoration: none; }
+.timeline-item p {
+font-size: 0.88rem;
+color: var(--body);
+line-height: 1.75;
+margin-bottom: 0.9rem;
+}
+.timeline-item .skill-tags { gap: 0.45rem; }
 /* PROJECTS */
 .projects-grid {
 display: grid;
@@ -730,10 +864,12 @@ section { padding-top: 4rem; padding-bottom: 4rem; }
 .hero-stats { gap: 1.6rem; flex-wrap: wrap; }
 .contact-inner { flex-direction: column; align-items: flex-start; padding: 2.2rem 1.8rem; }
 .terminal-body { min-height: 260px; font-size: 0.74rem; }
+.t-input { font-size: 16px; }
 }
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="glow-orb" aria-hidden="true"></div>
@@ -742,6 +878,7 @@ section { padding-top: 4rem; padding-bottom: 4rem; }
 <a href="#" class="nav-logo"><span class="logo-mark">▲</span>Brandon Roos<span style="color:var(--teal)">.</span></a>
 <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 <ul class="nav-links" id="nav-links">
+<li><a href="#experience">Experience</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#certs">Certs</a></li>
@@ -751,7 +888,7 @@ section { padding-top: 4rem; padding-bottom: 4rem; }
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero" id="main-content">
 <div class="hero-left">
 <img src="headshot.jpg" alt="Portrait of Brandon Roos McClinton" class="hero-avatar" width="88" height="88">
 <div class="status-pill">
@@ -793,7 +930,7 @@ GitHub
 </div>
 </div>
 <div class="hero-right">
-<div class="terminal" aria-hidden="true">
+<div class="terminal" role="group" aria-label="Interactive terminal — click and type 'help' to explore">
 <div class="terminal-bar">
 <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
 <span class="terminal-title">brandon@blueteam: ~</span>
@@ -805,9 +942,36 @@ GitHub
 
 <hr class="divider">
 
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="section-label">01 · Career</div>
+<h2 class="section-title">Experience</h2>
+<p class="section-intro">Seven-plus years across IT operations and security — currently running a managed security practice end to end.</p>
+<div class="timeline">
+
+<div class="timeline-item reveal">
+<div class="timeline-head">
+<h3>Founder</h3>
+<span class="timeline-date">Current</span>
+</div>
+<div class="timeline-org"><a href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> · Managed Security &amp; IT</div>
+<p>Run a managed security and IT practice for small businesses — SIEM monitoring across ~15K security events per month, SentinelOne EDR on a 28-device fleet, incident investigation and reporting, and endpoint hardening.</p>
+<div class="skill-tags">
+<span class="skill-tag">Wazuh SIEM</span>
+<span class="skill-tag">SentinelOne EDR</span>
+<span class="skill-tag">Incident Response</span>
+<span class="skill-tag">pfSense</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<hr class="divider">
+
 <!-- PROJECTS -->
 <section id="projects">
-<div class="section-label">01 · Work</div>
+<div class="section-label">02 · Work</div>
 <h2 class="section-title">Featured Projects</h2>
 <p class="section-intro">Hands-on security engineering — from a monitored home lab to purpose-built tooling for incident response workflows.</p>
 <div class="projects-grid">
@@ -859,7 +1023,7 @@ GitHub
 
 <!-- SKILLS -->
 <section id="skills">
-<div class="section-label">02 · Tooling</div>
+<div class="section-label">03 · Tooling</div>
 <h2 class="section-title">Skills &amp; Tools</h2>
 <p class="section-intro">The stack I work with daily — across detection, network defense, scripting, and cloud.</p>
 <div class="skills-grid">
@@ -931,7 +1095,7 @@ GitHub
 
 <!-- CERTS -->
 <section id="certs">
-<div class="section-label">03 · Credentials</div>
+<div class="section-label">04 · Credentials</div>
 <h2 class="section-title">Certifications &amp; Training</h2>
 <div class="certs-list">
 
@@ -993,7 +1157,7 @@ GitHub
 
 <!-- EDUCATION -->
 <section id="education">
-<div class="section-label">04 · Education</div>
+<div class="section-label">05 · Education</div>
 <h2 class="section-title">Education</h2>
 <div class="certs-list" style="margin-bottom:0">
 
@@ -1123,19 +1287,37 @@ const scriptB = [
 ];
 const scripts = [scriptA, scriptB];
 const PROMPT = '<span class="t-prompt">brandon@blueteam:~$</span> ';
+const HINT = '<span class="t-hint">// this terminal is live — click and type \'help\'</span>';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait = ms => new Promise(r => setTimeout(r, ms));
+const termWrap = document.querySelector('.terminal');
+let interactive = false;
+let termInput = null;
+const cmdHistory = [];
+let histIdx = -1;
+
+function scrollTerm() { termBody.scrollTop = termBody.scrollHeight; }
+
+function printLine(html) {
+const d = document.createElement('div');
+d.className = 't-line';
+d.innerHTML = html;
+termBody.appendChild(d);
+scrollTerm();
+return d;
+}
 
 function renderStatic() {
 termBody.innerHTML = scriptA.map(s =>
 s.type === 'cmd'
 ? '<div class="t-line">' + PROMPT + '<span class="t-cmd">' + s.text + '</span></div>'
 : '<div class="t-line">' + s.html + '</div>'
-).join('') + '<div class="t-line">' + PROMPT + '<span class="t-caret"></span></div>';
+).join('') + '<div class="t-line">' + HINT + '</div><div class="t-line">' + PROMPT + '<span class="t-caret"></span></div>';
 }
 
 async function typeScript(script) {
 for (const step of script) {
+if (interactive) return;
 if (step.type === 'cmd') {
 const line = document.createElement('div');
 line.className = 't-line';
@@ -1143,38 +1325,173 @@ line.innerHTML = PROMPT + '<span class="t-cmd"></span><span class="t-caret"></sp
 termBody.appendChild(line);
 const cmdEl = line.querySelector('.t-cmd');
 for (const ch of step.text) {
+if (interactive) { return; }
 cmdEl.textContent += ch;
 await wait(38 + Math.random() * 45);
 }
 await wait(260);
+if (interactive) return;
 line.querySelector('.t-caret').remove();
 } else {
-const line = document.createElement('div');
-line.className = 't-line';
-line.innerHTML = step.html;
-termBody.appendChild(line);
+printLine(step.html);
 await wait(320);
 }
 }
-const final = document.createElement('div');
-final.className = 't-line';
-final.innerHTML = PROMPT + '<span class="t-caret"></span>';
-termBody.appendChild(final);
+if (interactive) return;
+printLine(HINT);
+printLine(PROMPT + '<span class="t-caret"></span>');
 }
 
 async function runTerminal() {
 if (reduceMotion) { renderStatic(); return; }
 let i = 0;
-while (true) {
+while (!interactive) {
 await typeScript(scripts[i % scripts.length]);
+if (interactive) return;
 await wait(4500);
+if (interactive) return;
 termBody.style.opacity = '0';
 await wait(300);
+if (interactive) return;
 termBody.innerHTML = '';
 termBody.style.opacity = '1';
 i++;
 }
 }
+
+// ----- Interactive shell -----
+const T_COMMANDS = {
+help: () =>
+'<span class="t-out">available commands:</span><br>' +
+'<span class="t-cmd">  whoami       </span><span class="t-out">who is this guy</span><br>' +
+'<span class="t-cmd">  experience   </span><span class="t-out">career background</span><br>' +
+'<span class="t-cmd">  projects     </span><span class="t-out">featured work + repos</span><br>' +
+'<span class="t-cmd">  skills       </span><span class="t-out">tools &amp; stack</span><br>' +
+'<span class="t-cmd">  certs        </span><span class="t-out">certifications</span><br>' +
+'<span class="t-cmd">  education    </span><span class="t-out">degrees</span><br>' +
+'<span class="t-cmd">  contact      </span><span class="t-out">get in touch</span><br>' +
+'<span class="t-cmd">  clear        </span><span class="t-out">clear the screen</span><br>' +
+'<span class="t-cmd">  exit         </span><span class="t-out">resume the demo</span>',
+whoami: () => '<span class="t-out">Brandon Roos McClinton — Founder, Cyber Obsidian.<br>7+ years across IT operations and security. U.S. Citizen · Clearance-Eligible.</span>',
+experience: () => '<span class="t-out">Founder @ <a class="t-link" href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> — managed security &amp; IT for small businesses.<br>SIEM monitoring · SentinelOne EDR · incident investigation &amp; reporting.<br>Full timeline: <a class="t-link" href="#experience">jump to Experience ↓</a></span>',
+projects: () =>
+'<span class="t-out">4 featured projects:</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Home-Lab" target="_blank" rel="noopener">Security Operations Home Lab</a> <span class="t-out">— Proxmox · pfSense · Wazuh</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/hashdetect" target="_blank" rel="noopener">HashDetect</a> <span class="t-out">— Python hash-type identifier CLI</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Mastercard-SIM-Phishing-" target="_blank" rel="noopener">Mastercard Phishing Simulation</a><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Keystroke-Forensics-AES" target="_blank" rel="noopener">Input Capture Detection Study</a> <span class="t-out">— ATT&amp;CK T1056.001</span>',
+skills: () =>
+'<span class="t-out">SIEM ......... Splunk · Wazuh · Elastic · Sentinel<br>' +
+'network ...... Wireshark · Nmap · pfSense · Suricata<br>' +
+'endpoint ..... SentinelOne · CrowdStrike · Nessus · ATT&amp;CK<br>' +
+'scripting .... Python · PowerShell · Bash · Java<br>' +
+'systems ...... Windows Server · Linux · Proxmox · Docker<br>' +
+'cloud ........ Azure · AWS · Google Cloud</span>',
+certs: () =>
+'<span class="t-ok">[OK]</span> <span class="t-out">Google Cybersecurity ... verified</span><br>' +
+'<span class="t-ok">[OK]</span> <span class="t-out">Google Data Analytics .. verified</span><br>' +
+'<span class="t-warn">[!!]</span> <span class="t-out">CompTIA Security+ ...... in progress</span>',
+education: () =>
+'<span class="t-out">M.S. Information Technology — Liberty University (expected 2026)<br>B.S. Information Technology — Liberty University, NSA/DHS CAE in Cyber Defense (2023)</span>',
+contact: () =>
+'<span class="t-out">let\'s talk:</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener">LinkedIn</a><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos" target="_blank" rel="noopener">GitHub</a><br>' +
+'<span class="t-ok">▸</span> <span class="t-out">email — use the</span> <a class="t-link" href="#contact">Email Me button ↓</a>',
+ls: () => '<span class="t-out">focus.txt  certs.log  lab.log  hire_me.sh</span>',
+status: () => '<span class="t-ok">▸ Open to SOC · Cloud Security · DevSecOps — let\'s talk.</span>'
+};
+
+function runCommand(raw) {
+const input = raw.trim();
+if (!input) { newPrompt(); return; }
+cmdHistory.push(input);
+histIdx = cmdHistory.length;
+const lower = input.toLowerCase();
+if (lower === 'clear') { termBody.innerHTML = ''; newPrompt(); return; }
+if (lower === 'exit') {
+interactive = false;
+termInput = null;
+termBody.innerHTML = '';
+runTerminal();
+return;
+}
+if (lower === 'sudo hire-brandon' || lower === './hire_me.sh' || lower === 'hire_me.sh') {
+printLine('<span class="t-ok">[sudo] permission granted — excellent choice.</span><br><span class="t-out">initiating handshake →</span> <a class="t-link" href="#contact">contact ↓</a>');
+newPrompt(); return;
+}
+if (lower === 'cat focus.txt') { printLine(scriptA[3].html); newPrompt(); return; }
+if (lower === 'cat certs.log') { printLine(T_COMMANDS.certs()); newPrompt(); return; }
+if (lower === 'cat lab.log' || lower === 'tail lab.log') { printLine(scriptB[3].html); newPrompt(); return; }
+if (lower === 'cat hire_me.sh') { printLine('<span class="t-out">#!/bin/bash</span><br><span class="t-out">exec sudo hire-brandon</span>'); newPrompt(); return; }
+if (lower.startsWith('status')) { printLine(T_COMMANDS.status()); newPrompt(); return; }
+const fn = T_COMMANDS[lower];
+if (fn) { printLine(fn()); } else {
+printLine('<span class="t-warn">bash: </span><span class="t-out">' + input.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + ': command not found — try </span><span class="t-cmd">help</span>');
+}
+newPrompt();
+}
+
+function onTermKey(e) {
+if (e.key === 'Enter') {
+const val = termInput.value;
+freezePrompt(val);
+runCommand(val);
+} else if (e.key === 'ArrowUp') {
+e.preventDefault();
+if (histIdx > 0) { histIdx--; termInput.value = cmdHistory[histIdx]; }
+} else if (e.key === 'ArrowDown') {
+e.preventDefault();
+if (histIdx < cmdHistory.length - 1) { histIdx++; termInput.value = cmdHistory[histIdx]; }
+else { histIdx = cmdHistory.length; termInput.value = ''; }
+}
+}
+
+function newPrompt() {
+const line = document.createElement('div');
+line.className = 't-line t-active';
+line.innerHTML = PROMPT;
+termInput = document.createElement('input');
+termInput.className = 't-input';
+termInput.type = 'text';
+termInput.setAttribute('aria-label', "Terminal command input — type 'help' for commands");
+termInput.setAttribute('autocomplete', 'off');
+termInput.setAttribute('autocapitalize', 'none');
+termInput.setAttribute('autocorrect', 'off');
+termInput.setAttribute('spellcheck', 'false');
+termInput.addEventListener('keydown', onTermKey);
+line.appendChild(termInput);
+termBody.appendChild(line);
+termInput.focus({ preventScroll: true });
+scrollTerm();
+}
+
+function freezePrompt(text) {
+const line = termInput.closest('.t-line');
+line.classList.remove('t-active');
+termInput.removeEventListener('keydown', onTermKey);
+termInput.remove();
+termInput = null;
+const span = document.createElement('span');
+span.className = 't-cmd';
+span.textContent = text;
+line.appendChild(span);
+}
+
+function enterInteractive() {
+interactive = true;
+termBody.innerHTML = '';
+termBody.style.opacity = '1';
+printLine('<span class="t-ok">interactive mode</span> <span class="t-out">— type</span> <span class="t-cmd">help</span> <span class="t-out">to explore, or</span> <span class="t-cmd">exit</span> <span class="t-out">to resume the demo.</span>');
+newPrompt();
+}
+
+termWrap.addEventListener('click', (e) => {
+if (e.target.closest('a')) return;
+if (!interactive) { enterInteractive(); }
+else if (termInput) { termInput.focus({ preventScroll: true }); }
+});
+
 runTerminal();
 </script>
 
