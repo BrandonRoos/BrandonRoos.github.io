@@ -1189,13 +1189,13 @@ GitHub
 <div class="contact-inner reveal">
 <div class="contact-text">
 <h2>Let's connect.</h2>
-<p>I'm actively pursuing SOC Analyst, Cloud Security, and DevSecOps roles. If you're a recruiter or hiring manager, I'd love to hear from you.</p>
+<p>I'm actively pursuing SOC Analyst, Cloud Security, and DevSecOps roles. If you're a recruiter or hiring manager, reach out on LinkedIn — I respond quickly to connection requests with a note.</p>
 <p class="mono" style="margin-top:0.9rem;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em">New York metro · Remote · Open to relocation (Northern Virginia / DC)</p>
 </div>
 <div class="contact-links">
-<a href="#" id="contact-email-link" class="btn btn-primary">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
-Email Me
+<a href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener" class="btn btn-primary">
+<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+Message me on LinkedIn
 </a>
 <a href="https://cyberobsidian.com" target="_blank" rel="noopener" class="btn btn-ghost">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1221,14 +1221,6 @@ observer.unobserve(entry.target);
 });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
-
-// Contact email — assembled at runtime so it never appears as plain text in the page source
-(function() {
-var codes = [0];
-var address = String.fromCharCode.apply(null, codes);
-var link = document.getElementById('contact-email-link');
-if (link) link.href = 'mailto:' + address;
-})();
 
 // Scroll progress bar
 const progressBar = document.getElementById('scroll-progress');
@@ -1394,10 +1386,10 @@ certs: () =>
 education: () =>
 '<span class="t-out">M.S. Information Technology — Liberty University (expected 2026)<br>B.S. Information Technology — Liberty University, NSA/DHS CAE in Cyber Defense (2023)</span>',
 contact: () =>
-'<span class="t-out">let\'s talk:</span><br>' +
-'<span class="t-ok">▸</span> <a class="t-link" href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener">LinkedIn</a><br>' +
+'<span class="t-out">let\'s talk — LinkedIn is the fastest way to reach me:</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener">LinkedIn</a> <span class="t-out">— message or connect with a note</span><br>' +
 '<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos" target="_blank" rel="noopener">GitHub</a><br>' +
-'<span class="t-ok">▸</span> <span class="t-out">email — use the</span> <a class="t-link" href="#contact">Email Me button ↓</a>',
+'<span class="t-ok">▸</span> <a class="t-link" href="https://cyberobsidian.com" target="_blank" rel="noopener">cyberobsidian.com</a>',
 ls: () => '<span class="t-out">focus.txt  certs.log  lab.log  hire_me.sh</span>',
 status: () => '<span class="t-ok">▸ Open to SOC · Cloud Security · DevSecOps — let\'s talk.</span>'
 };
