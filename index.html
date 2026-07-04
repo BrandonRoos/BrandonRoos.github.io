@@ -997,7 +997,7 @@ GitHub
 <p class="mono" style="margin-top:0.9rem;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em">New York metro · Remote · Open to relocation (Northern Virginia / DC)</p>
 </div>
 <div class="contact-links">
-<a href="https://www.linkedin.com/in/brandon-roos-mcclinton/" class="btn btn-primary">
+<a href="#" id="contact-email-link" class="btn btn-primary">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
 Email Me
 </a>
@@ -1025,6 +1025,14 @@ observer.unobserve(entry.target);
 });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
+
+// Contact email — assembled at runtime so it never appears as plain text in the page source
+(function() {
+var codes = [0];
+var address = String.fromCharCode.apply(null, codes);
+var link = document.getElementById('contact-email-link');
+if (link) link.href = 'mailto:' + address;
+})();
 
 // Mobile nav
 const navToggle = document.querySelector('.nav-toggle');
