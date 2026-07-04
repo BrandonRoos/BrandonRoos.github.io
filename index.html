@@ -175,6 +175,16 @@ gap: 4rem;
 }
 .hero-left { flex: 1.15; min-width: 0; }
 .hero-right { flex: 0.85; min-width: 0; }
+.hero-avatar {
+width: 88px;
+height: 88px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid var(--teal);
+box-shadow: 0 0 0 4px var(--teal-dim), 0 10px 26px rgba(0,0,0,0.45);
+margin-bottom: 1.4rem;
+animation: fadeUp 0.6s ease both;
+}
 .status-pill {
 display: inline-flex;
 align-items: center;
@@ -743,6 +753,7 @@ section { padding-top: 4rem; padding-bottom: 4rem; }
 <!-- HERO -->
 <header class="hero">
 <div class="hero-left">
+<img src="headshot.jpg" alt="Portrait of Brandon Roos McClinton" class="hero-avatar" width="88" height="88">
 <div class="status-pill">
 <span class="status-dot"></span>
 Open to SOC Analyst · Cloud Security · DevSecOps roles
