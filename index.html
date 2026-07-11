@@ -34,7 +34,7 @@
     "https://github.com/BrandonRoos",
     "https://cyberobsidian.com"
   ],
-  "knowsAbout": ["Security Operations", "SIEM", "Incident Response", "Cloud Security", "EDR", "Network Security", "Detection Engineering"]
+  "knowsAbout": ["Security Operations", "SIEM", "Incident Response", "Cloud Security", "EDR", "Network Security", "Detection Engineering", "Identity and Access Management", "Vulnerability Management", "Threat Detection"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -527,6 +527,25 @@ line-height: 1.75;
 margin-bottom: 0.9rem;
 }
 .timeline-item .skill-tags { gap: 0.45rem; }
+.timeline-item ul { list-style: none; margin-bottom: 0.9rem; }
+.timeline-item li {
+position: relative;
+padding-left: 1.2rem;
+font-size: 0.86rem;
+color: var(--body);
+line-height: 1.65;
+margin-bottom: 0.5rem;
+}
+.timeline-item li:last-child { margin-bottom: 0; }
+.timeline-item li::before {
+content: '▸';
+position: absolute;
+left: 0;
+top: 0;
+color: var(--teal);
+font-size: 0.8rem;
+}
+.timeline-item li strong { color: var(--text); font-weight: 600; }
 /* PROJECTS */
 .projects-grid {
 display: grid;
@@ -903,7 +922,7 @@ Brandon<br>
 <span class="dim">McClinton</span>
 </h1>
 <p class="hero-sub">
-Security practitioner with <strong>7+ years</strong> across IT operations and security. Founder of <a href="https://cyberobsidian.com" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;font-weight:600">Cyber Obsidian</a>, a managed security and IT practice helping small businesses improve endpoint protection, monitoring, and incident readiness — <strong>SIEM monitoring, SentinelOne EDR, incident investigation and reporting.</strong> U.S. Citizen · Clearance-Eligible.
+Security practitioner with <strong>7+ years</strong> across IT operations and security. Founder of <a href="https://cyberobsidian.com" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;font-weight:600">Cyber Obsidian</a>, a managed security and IT practice helping small businesses improve endpoint protection, monitoring, and incident readiness — <strong>Google Workspace security monitoring, SentinelOne EDR, incident investigation and reporting.</strong> U.S. Citizen · Clearance-Eligible.
 </p>
 <div class="hero-cta">
 <a href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener" class="btn btn-primary">
@@ -923,7 +942,7 @@ GitHub
 </div>
 <div class="stat-item">
 <div class="stat-num">15K+</div>
-<div class="stat-label">Security Events / Mo Monitored</div>
+<div class="stat-label">Messages Screened / Mo</div>
 </div>
 <div class="stat-item">
 <div class="stat-num">28</div>
@@ -953,20 +972,54 @@ GitHub
 
 <div class="timeline-item reveal">
 <div class="timeline-head">
-<h3>Founder</h3>
-<span class="timeline-date">Current</span>
+<h3>Founder &amp; Principal Security Consultant</h3>
+<span class="timeline-date">Jan 2025 – Present</span>
 </div>
-<div class="timeline-org"><a href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> · Managed Security &amp; IT</div>
-<p>Run a managed security and IT practice for small businesses — SIEM monitoring across ~15K security events per month, SentinelOne EDR on a 28-device fleet, incident investigation and reporting, and endpoint hardening.</p>
+<div class="timeline-org"><a href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> · Managed Security Services Provider (MSSP) · Remote</div>
+<p>Managed security for small-business clients — Google Workspace security monitoring, SentinelOne EDR, phishing and spoofing detection, endpoint threat containment, and incident response.</p>
 <div class="skill-tags">
-<span class="skill-tag">Wazuh SIEM</span>
+<span class="skill-tag">Google Workspace</span>
 <span class="skill-tag">SentinelOne EDR</span>
+<span class="skill-tag">Email Security</span>
 <span class="skill-tag">Incident Response</span>
-<span class="skill-tag">pfSense</span>
+<span class="skill-tag">MFA / 2SV</span>
+</div>
+</div>
+
+<div class="timeline-item reveal">
+<div class="timeline-head">
+<h3>LMS &amp; Academic Technology Specialist</h3>
+<span class="timeline-date">Apr 2020 – Present</span>
+</div>
+<div class="timeline-org">Liberty University · Remote</div>
+<p>Academic-technology support — Canvas LMS administration, LTI integrations, vendor evaluation, and ticket-driven support workflows.</p>
+<div class="skill-tags">
+<span class="skill-tag">Canvas LMS</span>
+<span class="skill-tag">Smartsheet</span>
+<span class="skill-tag">Ticketing</span>
+<span class="skill-tag">LTI Integrations</span>
+<span class="skill-tag">Vendor Assessment</span>
+</div>
+</div>
+
+<div class="timeline-item reveal">
+<div class="timeline-head">
+<h3>IT Support Specialist</h3>
+<span class="timeline-date">Sep 2018 – Oct 2020</span>
+</div>
+<div class="timeline-org">Thomas Road · Lynchburg, VA</div>
+<p>Cross-platform IT support — hardened Windows, macOS, and Linux endpoints with security baselines and least-privilege controls, resolved server and network issues, and led database migrations.</p>
+<div class="skill-tags">
+<span class="skill-tag">Windows</span>
+<span class="skill-tag">macOS</span>
+<span class="skill-tag">Linux</span>
+<span class="skill-tag">System Hardening</span>
+<span class="skill-tag">Least Privilege</span>
 </div>
 </div>
 
 </div>
+<p class="mono" style="margin-top:1.6rem;font-size:0.75rem;letter-spacing:0.04em"><a href="https://www.linkedin.com/in/brandon-roos-mcclinton/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;font-weight:600">Full work history on LinkedIn →</a></p>
 </section>
 
 <hr class="divider">
@@ -983,9 +1036,19 @@ GitHub
 <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
 <span class="project-tag">Home Lab</span>
 </div>
-<h3>Security Operations Home Lab</h3>
-<p>Virtualized SOC lab on Proxmox VE — pfSense firewall, Wazuh SIEM/XDR ingesting Windows and Linux endpoint telemetry; VLAN segmentation and Suricata IDS integration in progress.</p>
+<h3>Home Lab &amp; SOC Detection Lab</h3>
+<p>Segmented VLAN network on pfSense with Twingate zero-trust access and Quad9 DNS filtering. Building a virtualized SOC lab on Proxmox — Wazuh SIEM, adversary emulation with Atomic Red Team, and custom MITRE ATT&amp;CK-mapped detection rules.</p>
 <a href="https://github.com/BrandonRoos/Home-Lab" target="_blank" rel="noopener" class="project-link">View Repo →</a>
+</article>
+
+<article class="project-card reveal">
+<div class="project-head">
+<div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div>
+<span class="project-tag">Architecture</span>
+</div>
+<h3>cyberobsidian.com — Architecture &amp; Security</h3>
+<p>Production Next.js 16 / TypeScript site for my MSSP, hardened end to end: CSP and full security-header set, server-side Turnstile bot verification, input validation with header-injection defense, rate limiting, and RFC 9116 security.txt. Architecture public, source private.</p>
+<a href="https://github.com/BrandonRoos/cyberobsidian-web" target="_blank" rel="noopener" class="project-link">View Repo →</a>
 </article>
 
 <article class="project-card reveal">
@@ -1001,9 +1064,9 @@ GitHub
 <article class="project-card reveal">
 <div class="project-head">
 <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/><path d="M12 13l4 5"/></svg></div>
-<span class="project-tag">Simulation</span>
+<span class="project-tag">Analysis</span>
 </div>
-<h3>Mastercard Phishing Simulation</h3>
+<h3>Phishing Campaign Analysis</h3>
 <p>Phishing email analysis and campaign-results interpretation — identifying at-risk teams and building a targeted security-awareness training plan.</p>
 <a href="https://github.com/BrandonRoos/Mastercard-SIM-Phishing-" target="_blank" rel="noopener" class="project-link">View Repo →</a>
 </article>
@@ -1013,9 +1076,29 @@ GitHub
 <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg></div>
 <span class="project-tag">Research</span>
 </div>
-<h3>Input Capture Detection Study</h3>
-<p>Educational security research analyzing input-capture techniques (MITRE ATT&amp;CK T1056.001) with a focus on detection via Sysmon and SIEM telemetry.</p>
+<h3>Keystroke Logging &amp; Detection Study</h3>
+<p>Security research analyzing input-capture techniques (MITRE ATT&amp;CK T1056.001) with a focus on detection via Sysmon and SIEM telemetry.</p>
 <a href="https://github.com/BrandonRoos/Keystroke-Forensics-AES" target="_blank" rel="noopener" class="project-link">View Repo →</a>
+</article>
+
+<article class="project-card reveal">
+<div class="project-head">
+<div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5"/></svg></div>
+<span class="project-tag">Python / Crypto</span>
+</div>
+<h3>AES Encryption &amp; Decryption Tool</h3>
+<p>Python Fernet (AES-128-CBC + HMAC) encryption tool for secure data transmission and storage.</p>
+<a href="https://github.com/BrandonRoos/Encryption-and-Decryption-PY-AES" target="_blank" rel="noopener" class="project-link">View Repo →</a>
+</article>
+
+<article class="project-card reveal">
+<div class="project-head">
+<div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15L19 4l2 2-2 2 2 2-3 3-2-2-1.15 1.15"/></svg></div>
+<span class="project-tag">Python / CLI</span>
+</div>
+<h3>Secure Password Generator</h3>
+<p>Python password generator using the secrets CSPRNG, enforcing complexity rules and security best practices.</p>
+<a href="https://github.com/BrandonRoos/Python_GeneratePassword" target="_blank" rel="noopener" class="project-link">View Repo →</a>
 </article>
 
 </div>
@@ -1027,16 +1110,19 @@ GitHub
 <section id="skills">
 <div class="section-label">03 · Tooling</div>
 <h2 class="section-title">Skills &amp; Tools</h2>
-<p class="section-intro">The stack I work with daily — across detection, network defense, scripting, and cloud.</p>
+<p class="section-intro">The stack I work with daily — across detection, identity, network defense, scripting, and cloud.</p>
 <div class="skills-grid">
 
 <div class="skill-category reveal">
-<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>SIEM &amp; Monitoring</div>
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>SIEM &amp; Detection</div>
 <div class="skill-tags">
 <span class="skill-tag">Splunk</span>
 <span class="skill-tag">Wazuh</span>
 <span class="skill-tag">Elastic ELK</span>
 <span class="skill-tag">Microsoft Sentinel</span>
+<span class="skill-tag">Sigma</span>
+<span class="skill-tag">MITRE ATT&amp;CK</span>
+<span class="skill-tag">Atomic Red Team</span>
 </div>
 </div>
 
@@ -1047,46 +1133,74 @@ GitHub
 <span class="skill-tag">Nmap</span>
 <span class="skill-tag">pfSense</span>
 <span class="skill-tag">Suricata</span>
+<span class="skill-tag">Twingate (Zero Trust)</span>
 </div>
 </div>
 
 <div class="skill-category reveal">
-<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Endpoint &amp; Vuln</div>
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg>Identity &amp; Cloud Security</div>
+<div class="skill-tags">
+<span class="skill-tag">Microsoft Entra ID</span>
+<span class="skill-tag">Microsoft 365</span>
+<span class="skill-tag">Google Workspace</span>
+</div>
+</div>
+
+<div class="skill-category reveal">
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Endpoint &amp; Vulnerability</div>
 <div class="skill-tags">
 <span class="skill-tag">SentinelOne</span>
 <span class="skill-tag">CrowdStrike</span>
+<span class="skill-tag">Sysmon</span>
 <span class="skill-tag">Nessus</span>
-<span class="skill-tag">MITRE ATT&amp;CK</span>
+<span class="skill-tag">OpenVAS</span>
 </div>
 </div>
 
 <div class="skill-category reveal">
-<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>Scripting &amp; Dev</div>
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M19 9h3M19 14h3M2 9h3M2 14h3"/></svg>AI &amp; Automation</div>
 <div class="skill-tags">
-<span class="skill-tag">Java</span>
+<span class="skill-tag">Ollama</span>
+<span class="skill-tag">Apify</span>
+</div>
+</div>
+
+<div class="skill-category reveal">
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>Programming &amp; Scripting</div>
+<div class="skill-tags">
 <span class="skill-tag">Python</span>
 <span class="skill-tag">PowerShell</span>
 <span class="skill-tag">Bash</span>
+<span class="skill-tag">Java</span>
+<span class="skill-tag">C++</span>
+<span class="skill-tag">SQL</span>
 </div>
 </div>
 
 <div class="skill-category reveal">
-<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Systems &amp; Virtualization</div>
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M8 14l-2 2 2 2M16 14l2 2-2 2"/></svg>Web Development</div>
 <div class="skill-tags">
-<span class="skill-tag">Windows Server</span>
-<span class="skill-tag">Ubuntu</span>
-<span class="skill-tag">Kali Linux</span>
+<span class="skill-tag">Next.js</span>
+<span class="skill-tag">React</span>
+<span class="skill-tag">JavaScript</span>
+<span class="skill-tag">TypeScript</span>
+<span class="skill-tag">Cloudflare</span>
+<span class="skill-tag">Git</span>
+</div>
+</div>
+
+<div class="skill-category reveal">
+<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-.42-8.98 6 6 0 1 0-11.06 3.1A3.5 3.5 0 0 0 6.5 19h11z"/></svg>Infrastructure &amp; Cloud</div>
+<div class="skill-tags">
 <span class="skill-tag">Proxmox VE</span>
 <span class="skill-tag">Docker</span>
-</div>
-</div>
-
-<div class="skill-category reveal">
-<div class="skill-category-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-.42-8.98 6 6 0 1 0-11.06 3.1A3.5 3.5 0 0 0 6.5 19h11z"/></svg>Cloud &amp; IAM</div>
-<div class="skill-tags">
-<span class="skill-tag">Microsoft Azure</span>
+<span class="skill-tag">Portainer</span>
 <span class="skill-tag">AWS</span>
+<span class="skill-tag">Microsoft Azure</span>
 <span class="skill-tag">Google Cloud</span>
+<span class="skill-tag">Windows Server</span>
+<span class="skill-tag">Linux</span>
+<span class="skill-tag">Kali Linux</span>
 </div>
 </div>
 
@@ -1367,20 +1481,25 @@ help: () =>
 '<span class="t-cmd">  clear        </span><span class="t-out">clear the screen</span><br>' +
 '<span class="t-cmd">  exit         </span><span class="t-out">resume the demo</span>',
 whoami: () => '<span class="t-out">Brandon Roos McClinton — Founder, Cyber Obsidian.<br>7+ years across IT operations and security. U.S. Citizen · Clearance-Eligible.</span>',
-experience: () => '<span class="t-out">Founder @ <a class="t-link" href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> — managed security &amp; IT for small businesses.<br>SIEM monitoring · SentinelOne EDR · incident investigation &amp; reporting.<br>Full timeline: <a class="t-link" href="#experience">jump to Experience ↓</a></span>',
+experience: () => '<span class="t-out">Founder @ <a class="t-link" href="https://cyberobsidian.com" target="_blank" rel="noopener">Cyber Obsidian</a> — managed security &amp; IT for small businesses.<br>Google Workspace security · SentinelOne EDR · incident investigation &amp; reporting.<br>Prior: IT / academic-technology roles at Liberty University &amp; Thomas Road.<br>Full timeline: <a class="t-link" href="#experience">jump to Experience ↓</a></span>',
 projects: () =>
-'<span class="t-out">4 featured projects:</span><br>' +
-'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Home-Lab" target="_blank" rel="noopener">Security Operations Home Lab</a> <span class="t-out">— Proxmox · pfSense · Wazuh</span><br>' +
+'<span class="t-out">7 featured projects:</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Home-Lab" target="_blank" rel="noopener">Home Lab &amp; SOC Detection Lab</a> <span class="t-out">— Proxmox · pfSense · Wazuh · Atomic Red Team</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/cyberobsidian-web" target="_blank" rel="noopener">cyberobsidian.com — Architecture &amp; Security</a> <span class="t-out">— Next.js MSSP site, hardened</span><br>' +
 '<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/hashdetect" target="_blank" rel="noopener">HashDetect</a> <span class="t-out">— Python hash-type identifier CLI</span><br>' +
-'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Mastercard-SIM-Phishing-" target="_blank" rel="noopener">Mastercard Phishing Simulation</a><br>' +
-'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Keystroke-Forensics-AES" target="_blank" rel="noopener">Input Capture Detection Study</a> <span class="t-out">— ATT&amp;CK T1056.001</span>',
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Mastercard-SIM-Phishing-" target="_blank" rel="noopener">Phishing Campaign Analysis</a><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Keystroke-Forensics-AES" target="_blank" rel="noopener">Keystroke Logging &amp; Detection Study</a> <span class="t-out">— ATT&amp;CK T1056.001</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Encryption-and-Decryption-PY-AES" target="_blank" rel="noopener">AES Encryption &amp; Decryption Tool</a> <span class="t-out">— Python Fernet</span><br>' +
+'<span class="t-ok">▸</span> <a class="t-link" href="https://github.com/BrandonRoos/Python_GeneratePassword" target="_blank" rel="noopener">Secure Password Generator</a> <span class="t-out">— secrets CSPRNG</span>',
 skills: () =>
-'<span class="t-out">SIEM ......... Splunk · Wazuh · Elastic · Sentinel<br>' +
-'network ...... Wireshark · Nmap · pfSense · Suricata<br>' +
-'endpoint ..... SentinelOne · CrowdStrike · Nessus · ATT&amp;CK<br>' +
-'scripting .... Python · PowerShell · Bash · Java<br>' +
-'systems ...... Windows Server · Linux · Proxmox · Docker<br>' +
-'cloud ........ Azure · AWS · Google Cloud</span>',
+'<span class="t-out">SIEM ......... Splunk · Wazuh · Elastic · Sentinel · Sigma · ATT&amp;CK · Atomic Red Team<br>' +
+'network ...... Wireshark · Nmap · pfSense · Suricata · Twingate<br>' +
+'identity ..... Entra ID · Microsoft 365 · Google Workspace<br>' +
+'endpoint ..... SentinelOne · CrowdStrike · Sysmon · Nessus · OpenVAS<br>' +
+'ai/auto ...... Ollama · Apify<br>' +
+'programming .. Python · PowerShell · Bash · Java · C++ · SQL<br>' +
+'web .......... Next.js · React · JavaScript · TypeScript · Cloudflare · Git<br>' +
+'infra ........ Proxmox · Docker · Portainer · AWS · Azure · GCP · Windows Server · Linux · Kali</span>',
 certs: () =>
 '<span class="t-ok">[OK]</span> <span class="t-out">Google Cybersecurity ... verified</span><br>' +
 '<span class="t-ok">[OK]</span> <span class="t-out">Google Data Analytics .. verified</span><br>' +
